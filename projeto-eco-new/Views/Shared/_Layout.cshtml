@@ -1,0 +1,67 @@
+﻿
+
+@model ContatoModel
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title> @ViewData["Title"] = Cadastro de Usuarios  </title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/projeto_eco_new.styles.css" asp-append-version="true" />
+</head>
+<body> 
+        <form asp-controller="Contato" asp-action="Criar" method="post">
+           <div class="container">
+
+                    <div class="box">
+                        <div class="fomulario">
+                            <div class="field">
+                                  <br />
+                                  <br />
+           
+                                <h3>Nome:</h3>
+                                <input class="name" asp-for="Nome" id="name" name="Nome" placeholder="Digite seu nome"/>
+                            </div>
+                       
+                            <div class="field">
+                                <h3>Nome de usuario:</h3>
+                                <input class="user" type="text"  asp-for="Usuario" name="Nome de usuario" placeholder="Nome de usuario" />
+                            </div>
+                      
+                            <div class="field">
+                                <h3>E-mail:</h3>
+                                <input class="email" type="email" asp-for="Email" name="E-mail" placeholder="Digite seu E-mail" />
+                            </div>
+                            <div class="field">
+                                <h3>Senha:</h3>
+                                <input class="pass" type="password" asp-for="Senha" name="Senha" placeholder="Digite sua senha" />
+                            </div>
+
+                            <div class="field">
+                                <h3>Telefone:</h3>
+                                <input class="phone" type="text" asp-for="Telefone" name="Senha" placeholder="Digite seu telefone" />
+                            </div>
+         
+                            <div class="field">
+                                  <br />
+                                  <br />
+                            <button class="btn" type="submit"><p>Inscreva-se</p></button>
+
+                            </div>    
+                        </div>
+                    </div>
+                </div>       
+            </form>
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
